@@ -1,0 +1,317 @@
+/*↑元々設定されているCSSのリセット*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #6c6b6b;
+}
+
+a{
+	text-decoration: none;  /*文字装飾機能をなくす*/
+}
+
+/* floatによる要素の滑り込みを防ぐ。
+　　今回は設定しているmainの後に続くfooterが対象*/
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*フォントの一括変更*/
+header, nav, h2, .main-visual, footer{
+	font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+/*ヘッダー*/
+header{
+	position: relative;
+	margin: 0 auto;
+	padding: 15px 0;
+	width: 90%;   /*	削除 margin: 0 auto;*/
+	text-align: center;  /*テキストを中央揃え*/
+}
+
+/*.header-top{}   ↓ 下の通りに変更*/
+header .headline {
+	font-size: 32px;
+}
+
+/*アイコン*/
+/* headerを基準に上・右から２２pxに移動*/
+.social{
+	position: absolute;
+	top: 22px;
+	right: 22px;
+}
+
+.social i{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+/*.header-bottom{} ↓下の通りに変更*/
+.nav-list{
+	text-align: center;  /*テキストを中央揃え*/
+	padding: 10px 0;     /*list-itemの範囲を上下10pxずつ狭める*/
+	margin: 0 auto;      /*要素を中央配置*/
+}
+
+/*navの項目*/
+.nav-list-item{
+	list-style: none;  /*先頭の黒丸を消す*/
+	display: inline-block;  /*横並びになり、上下のmarginが設定可能となる*/
+	margin: 0 20px;  /*上下0px 左右20px*/
+}
+
+/*メインビジュアル*/
+.main-visual{
+	width: 100%;
+	height: 300px;
+	background-image: url(img/mv.jpg); /*メインビジュアルの背景画像設定*/
+	background-size: cover;  /*比率を維持したまま領域を埋める(表示されない部分有)*/
+	background-position: center;   /*画像を中央配置*/
+}
+
+/*メインビジュアルの中身*/
+.main-visual-content{
+	width: 40%;
+	height: 300px;
+	background-color: rgba(0,0,0,0.5);  /*背景を半透明黒に*/
+	text-align: center;   /*文字を中央揃え*/
+	padding-top: 105px;  /*上部内側余白で垂直方向の位置調整*/
+}
+
+.main-visual-text{
+	color: #fff;  /*文字を白に*/
+}
+
+.main-visual-name{
+	margin-top: 30px;
+	color: #fff;  /*文字を白に*/
+}
+
+
+/*メイン*/
+main{
+	width: 800px;
+	margin: 0 auto;   /* 要素の中央配置*/
+	padding: 70px 0;  /*上下７０px、左右x０pxに内側余白*/
+}
+
+/*ブログ*/
+.blog{
+	width: 540px;   /*不要（中身の要素を作るため、外枠の高さは不要)height: 1400px;*/
+	float: left;  /*横並びにする*/
+	margin-right: 30px;  /*右側に余白追加*/
+}
+
+/*見出し*/
+.blog-headline{
+	border-bottom: 8px solid #f7f7f7;  /*headlineの下に線追加*/
+	text-align: center;  /*テキストを中央配置*/
+	line-height: 0.6;   /*行の高さ設定*/
+}
+
+.blog-box{
+	padding-top: 50px;  /*blog-boxの上部に余白追加*/
+}
+
+/*ブログの内容*/
+.blog-item{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #f7f7f7;
+}
+
+.blog-image{
+	height: 180px;
+	float: left;  /*横並びにする*/
+}
+
+.blog-text-headline{
+	padding-bottom: 15px;
+}
+
+.blog-text{
+	float: left;    /*横並び*/
+	padding: 30px 0 0 25px;  /*上３０　左２５余白追加*/
+}
+
+.blog-date{
+	font-size: 12px;
+	display: inline-block;  /*横並び(p ブロック要素からインラインに*/
+}
+
+.category{
+	display: inline-block;
+	padding: 5px 8px;
+	background-color: #acabab;
+	border-radius: 3px;   /*領域の角を少し丸める*/
+	color: #fff;
+	font-size: 11px;
+}
+
+/* Pagination */
+.pagination{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.pagination p{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	color: white;
+	background-color: #acabab;
+	border-radius: 3px;
+	margin: 0 5px;
+	line-height: 30px;
+}
+
+/*サイドバー*/
+.sidebar{
+	width: 230px;
+	/*  不要（中身の要素を作るため、外枠の高さは不要)height: 1400px;*/
+	float: left;    /*横並びにする*/
+}
+
+/*サイドバー各カテゴリのヘッドラインに適用*/
+.sidebar-headline, .instagram-headline, .categories-headline{
+	border-bottom: 8px solid #f7f7f7;
+	text-align: center;
+	line-height: 0.6;
+}
+
+/*　ポピュラーの要素内上下５０px*/
+.sidebar-contents{
+	padding: 50px 0;
+}
+
+/*　ポピュラーとカテゴリのテキストに適用*/
+.popular-text, .categories-text{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #f7f7f7;
+	margin-bottom: 5px;
+}
+
+/*ポピュラーとカテゴリの最後のテキストに適用*/
+.popular-text:last-child, .categories-text:last-child{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+/*インスタの写真設定*/
+.instagram-box{
+	float: left;
+	width: 110px;
+	padding-top: 110px;
+	background-size: cover;
+	background-position: center;
+}
+
+/*インスタの奇数番目（左側の列）の写真に右と下に１０px設定*/
+.instagram-box:nth-child(odd){
+	margin: 0 10px 10px 0;
+}
+
+/*インスタの写真挿入*/
+.instagram-box:nth-child(1){
+	background-image: url(img/airport.jpg);
+}
+.instagram-box:nth-child(2){
+	background-image: url(img/japan.jpg);
+}
+.instagram-box:nth-child(3){
+	background-image: url(img/snow.jpg);
+}
+.instagram-box:nth-child(4){
+	background-image: url(img/japan2.jpg);
+}
+.instagram-box:nth-child(5){
+	background-image: url(img/lake.jpg);
+}
+.instagram-box:nth-child(6){
+	background-image: url(img/road.jpg);
+}
+
+footer{
+	width: 100%;
+	height: 120px;
+	text-align: center;  /*テキストの中央揃え*/
+	padding: 50px 0;     /*footer-textの範囲を上下50pxずつ狭める*/
+	background-color: #848282;
+}
+
+.footer-text{
+	color: #fff;
+}
+
+
+/*画面幅425pxで閲覧したときに、スマートフォン用サイトに自動切り替えする*/
+@media screen and (max-width: 425px){
+	header{
+		width: 100%;
+	}
+
+	.nav-list{
+		width: 100%;
+	}
+
+	.nav-list-item{
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+
+	.social{
+		display: none;
+	}
+
+	.main-visual-content{
+		width: 100%;
+	}
+
+	main{
+		width: 100%;
+	}
+
+	.blog{
+		width: 100%;
+		margin: 0;
+	}
+
+	.blog-box{
+		padding-left: 2%;
+		padding-right: 2%
+	}
+
+	.blog-image{
+		width: 49%;
+	}
+
+	.blog-text{
+		width: 49%;
+		padding-top: 5px;
+	}
+
+	.sidebar{
+		width: 100%;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+
+	.instagram-box{
+		width: 48%;
+		padding-top: 48%
+	}
+
+	.instagram-box:nth-child(odd){
+		margin-right: 4%;
+	}
+
+	.pagination{
+		margin-bottom: 50px;
+	}
+
+}
