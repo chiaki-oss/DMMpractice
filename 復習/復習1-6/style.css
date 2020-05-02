@@ -1,0 +1,109 @@
+/*↑元々設定されているCSSのリセット*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #6c6b6b;
+}
+
+a{
+	text-decoration: none;  /*文字装飾機能をなくす*/
+}
+
+/* floatによる要素の滑り込みを防ぐ。
+　　今回は設定しているmainの後に続くfooterが対象*/
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+/*ヘッダー*/
+header{
+	width: 90%;
+	padding: 15px 0;
+	margin: 0 auto;
+	text-align: center; /*テキストを中央揃え*/
+}
+
+/*.header-top{}   ↓ 下の通りに変更*/
+header .headline {
+	font-size: 32px;
+}
+
+/*.header-bottom{} ↓下の通りに変更*/
+.nav-list{
+	text-align: center;  /*テキストを中央揃え*/
+	padding: 10px 0;  /*list-itemの範囲を上下10pxずつ狭める*/
+	margin: 0 auto;   /*要素を中央配置*/
+}
+/*navの項目*/
+.nav-list-item{
+	list-style: none;  /*先頭の黒丸を消す*/
+	display: inline-block;　/*横並びになり、上下のmarginが設定可能となる*/
+	margin:0 20px; /*上下0px 左右20px*/
+}
+
+/*メインビジュアル*/
+.main-visual{
+	width: 100%;
+	height: 300px;
+	background-image: url(img/mv.jpg); /*メインビジュアルの背景画像設定*/
+	background-size: cover; /*比率を維持したまま領域を埋める(表示されない部分有)*/
+	background-position: center;  /*画像を中央配置*/
+}
+
+/*メインビジュアルの中身*/
+.main-visual-content{
+	width: 40%;
+	height: 300px;
+	background-color: rgba(0,0,0,0.5); /*背景を半透明黒に*/
+	text-align: center; /*文字を中央揃え*/
+	padding-top: 105px; /*上部内側余白で垂直方向の位置調整*/
+}
+
+.main-visual-text{
+	color: #fff;  /*文字を白に*/
+}
+
+.main-visual-name{
+	margin-top: 30px;
+	color: #fff;  /*文字を白に*/
+}
+
+
+}
+
+/*メイン*/
+.main{
+	width: 840px;
+	margin: 0 auto;　　/* 要素の中央配置*/
+}
+
+/*ブログ*/
+.blog{
+	width: 600px;
+	height: 1400px;
+	float: left;　　/*横並びにする*/
+}
+
+/*サイドバー*/
+.sidebar{
+	width: 240px;
+	height: 1400px;
+	float: left;    /*横並びにする*/
+}
+
+footer{
+	width: 100%;
+	height: 120px;
+	text-align: center;  /*テキストの中央揃え*/
+	padding: 50px 0;     /*footer-textの範囲を上下50pxずつ狭める*/
+	background-color: #848282;
+}
+
+.footer-text{
+	color: #fff;
+}
+
